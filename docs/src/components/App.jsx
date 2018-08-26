@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Searchbar from './Searchbar';
 import CityList from './CityList';
-
+import CurrentWeather from './CurrentWeather';
 
 
 class App extends Component {
@@ -21,7 +21,6 @@ class App extends Component {
       this.cities = data;
     });
   };
-
 
   findCities = (query) => {
     if (query.length > 2) {
@@ -45,6 +44,7 @@ class App extends Component {
             <div className="city-list-container">
               <CityList cityList={this.state.cityList}/>
             </div>
+            <CurrentWeather/>
           </div>
         </div>
       </nav>
