@@ -2,19 +2,24 @@ import React, {Component} from 'react';
 import Searchbar from './Searchbar';
 import CityList from './CityList';
 import axios from "axios";
+import CurrentWeather from "./CurrentWeather";
 
 
 class App extends Component {
 
   state = {
     cityList: [],
-    currentWeather : {}
+    currentCity: '',
+    currentTemperature: '',
+    currentWeather: ''
   };
 
   cities = [];
 
   componentWillMount() {
     this.loadCities();
+    this.getCurrentWeather(3081368);
+
   }
 
   loadCities = () => {
@@ -35,30 +40,38 @@ class App extends Component {
     }
   };
 
+
+
   getCurrentWeather = (id) => {
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?id=${id}&APPID=44f2f084f7e358bf70863f3ac77089bf`)
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?id=${id}&APPID=5ef08df67684d77f946df578d29b8c5e&units=metric`)
       .then((data) => {
-        this.setState({currentWeather: data.data});
-        console.log(this.state.currentWeather);
-        console.log(data.data.main.temp);
-        console.log(data.data.weather[0].description);
+        this.setState({currentTemperature: data.data.main.temp.toFixed(1)});
+        this.setState({currentWeather: data.data.weather[0].description});
+        this.setState({currentCity: data.data.name});
       });
   };
 
 
   render() {
     return (
-      <nav>
-        <div className="nav-container">
-          <img src="../../images/logo.png" className="logo"/>
-          <div className="search-container">
-            <Searchbar findCities={this.findCities}/>
-            <div className="city-list-container">
-              <CityList cityList={this.state.cityList} getCurrentWeather={this.getCurrentWeather}/>
+      <div>
+        <nav>
+          <div className="nav-container">
+            <img src="../../images/logo.png" className="logo"/>
+            <div className="search-container">
+              <Searchbar findCities={this.findCities}/>
+              <div className="city-list-container">
+                <CityList cityList={this.state.cityList} getCurrentWeather={this.getCurrentWeather}/>
+              </div>
             </div>
           </div>
+        </nav>
+        <div>
+          <CurrentWeather currentWeather={this.state.currentWeather}
+                          currentTemperature={this.state.currentTemperature}
+                          currentCity={this.state.currentCity}/>
         </div>
-      </nav>
+      </div>
     );
   }
 }
