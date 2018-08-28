@@ -1,0 +1,85 @@
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body {
+  background: url("images/bg.jpg") fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  padding: 0;
+  margin: 0 3px 0 3px;
+}
+
+li {
+  padding-top: 5px;
+}
+
+.container {
+  width: 80%;
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 10px;
+  display: flex;
+  margin-top: 20px;
+  height: 95vh;
+}
+
+nav {
+  height: 120px;
+}
+
+.nav-container {
+  margin: 15px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.logo {
+  height: 100px;
+  margin: 0 15px 0 0;
+  opacity: 1;
+}
+
+.search-container {
+  width: 200px;
+  position: relative;
+}
+
+.searchbar {
+  box-sizing: border-box;
+  width: 200px;
+  height: 30px;
+}
+
+.city-list-container {
+  overflow: auto;
+  max-height: 70px;
+  position: absolute;
+  width: 200px;
+  background-color: #f1f1f1;
+  box-sizing: border-box;
+  font-size: 12px;
+}
+
+.city-list {
+  list-style-type: none;
+}
+
