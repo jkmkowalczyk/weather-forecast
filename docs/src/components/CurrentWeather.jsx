@@ -8,35 +8,35 @@ class CurrentWeather extends Component {
 
 
   selectWeatherIcon = (weather) => {
-    if (weather == "clear sky") {
+    if (weather === "clear sky") {
       return (
         <div className="icon sunny">
           <div className="sun">
-            <div className="rays"></div>
+            <div className="rays"/>
           </div>
         </div>
       )
-    } else if (weather.includes("clouds") || weather == "mist" || weather == "haze") {
+    } else if (weather.includes("clouds") || weather === "mist" || weather === "haze") {
       return (
         <div className="icon cloudy">
-          <div className="cloud"></div>
-          <div className="cloud"></div>
+          <div className="cloud"/>
+          <div className="cloud"/>
         </div>
       )
     } else if (weather.includes("rain")) {
       return (
         <div className="icon rainy">
-          <div className="cloud"></div>
-          <div className="rain"></div>
+          <div className="cloud"/>
+          <div className="rain"/>
         </div>
       )
-    } else if (weather == "thunderstorm") {
+    } else if (weather === "thunderstorm") {
       return (
         <div className="icon thunder-storm">
-          <div className="cloud"></div>
+          <div className="cloud"/>
           <div className="lightning">
-            <div className="bolt"></div>
-            <div className="bolt"></div>
+            <div className="bolt"/>
+            <div className="bolt"/>
           </div>
         </div>
       )
