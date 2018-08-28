@@ -41,7 +41,7 @@ class App extends Component {
   };
 
   getCurrentWeather = (id) => {
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?id=${id}&APPID=4c0eb57e534b00b40e6b365d4bf8f924`)
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?id=${id}&APPID=3d27700447a08070e87a9a904fbf3ac4`)
       .then((data) => {
         console.log(data.data);
         console.log(data.data.main.temp);
