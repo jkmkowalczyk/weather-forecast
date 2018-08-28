@@ -16,7 +16,7 @@ class CurrentWeather extends Component {
           </div>
         </div>
       )
-    } else if (weather.includes("clouds") || weather == "mist" || weather=="haze") {
+    } else if (weather.includes("clouds") || weather == "mist" || weather == "haze") {
       return (
         <div className="icon cloudy">
           <div className="cloud"></div>
@@ -30,10 +30,15 @@ class CurrentWeather extends Component {
           <div className="rain"></div>
         </div>
       )
-    } else if (weather == "") {
+    } else if (weather == "thunderstorm") {
       return (
-
-        null
+        <div className="icon thunder-storm">
+          <div className="cloud"></div>
+          <div className="lightning">
+            <div className="bolt"></div>
+            <div className="bolt"></div>
+          </div>
+        </div>
       )
     }
   };
