@@ -8,6 +8,7 @@ class App extends Component {
 
   state = {
     cityList: [],
+    currentWeather : {}
   };
 
   cities = [];
@@ -37,7 +38,8 @@ class App extends Component {
   getCurrentWeather = (id) => {
     axios.get(`https://api.openweathermap.org/data/2.5/weather?id=${id}&APPID=44f2f084f7e358bf70863f3ac77089bf`)
       .then((data) => {
-        console.log(data.data);
+        this.setState({currentWeather: data.data});
+        console.log(this.state.currentWeather);
         console.log(data.data.main.temp);
         console.log(data.data.weather[0].description);
       });
