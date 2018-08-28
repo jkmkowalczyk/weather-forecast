@@ -3,32 +3,32 @@ import axios from "axios";
 
 class CityList extends Component {
 
-  getCurrentWeather = (id) => {
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?id=${id}&APPID=44f2f084f7e358bf70863f3ac77089bf`)
-      .then((data) => {
-        console.log(data.data);
-      });
-  };
+  constructor(props) {
+    super(props);
+  }
 
-  renderCity(city) {
+
+  renderCity = (city) => {
     return (
-      <li key={city.id} onClick={() => {
-        this.getCurrentWeather(city.id);
-      }}>
-        {city.name},
-        {city.country},
-        {city.id}
+      <li key={city.id} onClick={() => this.props.getCurrentWeather(city.id)
+
+        // POBIERANIE LOKALIZACJI PO IP
+        // axios.get('http://api.ip2geo.pl/json/?ip=5.226.96.177')
+        //   .then((data) => {
+        //     console.log(data.data);
+        //   });
+      }>
+        {city.name}, {city.country}
       </li>
     );
-  }
+  };
+
 
   render() {
     return (
-      <div>
-        <ul className="city-list">
-          {this.props.cityList.map(this.renderCity)}
-        </ul>
-      </div>
+      <ul className="city-list">
+        {this.props.cityList.map(this.renderCity)}
+      </ul>
     );
   }
 }

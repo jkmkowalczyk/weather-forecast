@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Searchbar from './Searchbar';
 import CityList from './CityList';
-
+import axios from "axios";
 
 
 class App extends Component {
@@ -34,6 +34,15 @@ class App extends Component {
     }
   };
 
+  getCurrentWeather = (id) => {
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?id=${id}&APPID=44f2f084f7e358bf70863f3ac77089bf`)
+      .then((data) => {
+        console.log(data.data);
+        console.log(data.data.main.temp);
+        console.log(data.data.weather[0].description);
+      });
+  };
+
 
   render() {
     return (
@@ -43,7 +52,7 @@ class App extends Component {
           <div className="search-container">
             <Searchbar findCities={this.findCities}/>
             <div className="city-list-container">
-              <CityList cityList={this.state.cityList}/>
+              <CityList cityList={this.state.cityList} getCurrentWeather={this.getCurrentWeather}/>
             </div>
           </div>
         </div>
