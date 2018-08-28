@@ -16,11 +16,12 @@
 }
 
 body {
+  font-family: 'Roboto', sans-serif;
   background: url("images/bg.jpg") fixed;
   background-size: cover;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 ul {
@@ -38,7 +39,7 @@ li {
 }
 
 .container {
-  width: 80%;
+  width: 40%;
   background-color: white;
   opacity: 0.8;
   border-radius: 10px;
@@ -68,6 +69,7 @@ nav {
 }
 
 .searchbar {
+  padding-left: 10px;
   box-sizing: border-box;
   width: 200px;
   height: 30px;
@@ -95,6 +97,7 @@ nav {
   text-align: center;
   background-color: #5f94ab;
   display: flex;
+  align-items: center;
 }
 
 .current-info, .current-details {
@@ -105,11 +108,18 @@ nav {
 }
 
 .current h2 {
+  margin: 10px 0;
   color: #f1f1f1;
 }
 
 .current p {
   color: #a5e5e5;
   font-size: 20px;
+}
+
+.weather-icon {
+  height: 70px;
+  width: 70px;
+  background-color: black;
 }
 

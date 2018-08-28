@@ -11,7 +11,9 @@ class App extends Component {
     cityList: [],
     currentCity: '',
     currentTemperature: '',
-    currentWeather: ''
+    currentWindDirection: '',
+    currentWeather: '',
+    currentWindSpeed: ''
   };
 
   cities = [];
@@ -41,13 +43,17 @@ class App extends Component {
   };
 
 
-
   getCurrentWeather = (id) => {
     axios.get(`https://api.openweathermap.org/data/2.5/weather?id=${id}&APPID=5ef08df67684d77f946df578d29b8c5e&units=metric`)
       .then((data) => {
-        this.setState({currentTemperature: data.data.main.temp.toFixed(1)});
-        this.setState({currentWeather: data.data.weather[0].description});
-        this.setState({currentCity: data.data.name});
+        this.setState({
+          currentTemperature: data.data.main.temp.toFixed(1),
+          currentWeather: data.data.weather[0].description,
+          currentCity: data.data.name,
+          currentWindDirection: data.data.wind.deg,
+          currentWindSpeed: data.data.wind.speed
+        });
+console.log(this.state.currentWeather)
       });
   };
 
@@ -69,7 +75,9 @@ class App extends Component {
         <div>
           <CurrentWeather currentWeather={this.state.currentWeather}
                           currentTemperature={this.state.currentTemperature}
-                          currentCity={this.state.currentCity}/>
+                          currentCity={this.state.currentCity}
+                          currentWindDirection={this.state.currentWindDirection}
+                          currentWindSpeed={this.state.currentWindSpeed}/>
         </div>
       </div>
     );
