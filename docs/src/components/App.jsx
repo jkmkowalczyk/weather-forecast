@@ -10,7 +10,7 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { cityList: [], identyfikator: 2804316 };
+    this.state = { cityList: [], identyfikator: 3081368 };
   };
   cities = [];
 

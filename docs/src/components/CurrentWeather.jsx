@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-var Wroclaw = `https://api.openweathermap.org/data/2.5/weather?id=3081368&APPID=3d27700447a08070e87a9a904fbf3ac4`;
+var Wroclaw = `https://api.openweathermap.org/data/2.5/weather?id=&APPID=3d27700447a08070e87a9a904fbf3ac4`;
 
 class CurrentWeather extends Component {
 
