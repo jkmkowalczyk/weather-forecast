@@ -123,3 +123,21 @@ nav {
   background-color: black;
 }
 
+.nextweek {
+  border-radius: 10px;
+  text-align: center;
+  background-color: #5f94ab;
+  align-items: center;
+}
+
+.nextweek h2 {
+  margin: 10px 0;
+  color: #f1f1f1;
+}
+
+.nextweek p {
+  color: #a5e5e5;
+  font-size: 20px;
+}
+
+
