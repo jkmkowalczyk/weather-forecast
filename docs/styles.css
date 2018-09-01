@@ -124,16 +124,16 @@ nav {
 }
 
 .nextweek {
-  margin: 0 auto;
   width: 30%;
   height: 300px;
   border-radius: 10px;
   text-align: center;
   background-color: #5f94ab;
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   align-items: center;
 }
-
 
 .nextweek h2 {
   margin: 10px 0;

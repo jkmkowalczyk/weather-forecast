@@ -4,7 +4,8 @@ import CityList from './CityList';
 import axios from 'axios';
 import CurrentWeather from './CurrentWeather';
 import NextWeekWeather from './NextWeekWeather';
-
+import Moment from 'react-moment';
+import 'moment-timezone';
 
 class App extends Component {
   state = {
@@ -14,7 +15,7 @@ class App extends Component {
     currentWindDirection: '',
     currentWeather: '',
     currentWindSpeed: '',
-    nextweekTemperature: '',
+    nextweekTemperatureDay: '',
     nextweekWindDirection: '',
     nextweekWeather: '',
     nextweekWindSpeed: '',
@@ -62,12 +63,12 @@ class App extends Component {
       .get(`https://api.openweathermap.org/data/2.5/forecast?id=${id}&APPID=5ef08df67684d77f946df578d29b8c5e&units=metric`)
       .then((data) => {
         this.setState({
-          nextweekTemperature: data.data.list[7].main.temp,
-          nextweekWeather: data.data.list[7].weather[0].description,
+          nextweekTemperatureDay: data.data.list[15].main.temp.toFixed(1),
+          nextweekWeather: data.data.list[15].weather[0].description,
           currentCity: data.data.city.name,
-          nextweekWindDirection: data.data.list[7].wind.deg,
-          nextweekWindSpeed: data.data.list[7].wind.speed,
-          nextweekDate: (data.data.list[7].dt_txt).slice(0, 10),
+          nextweekWindDirection: data.data.list[15].wind.deg,
+          nextweekWindSpeed: data.data.list[15].wind.speed,
+          nextweekDate: data.data.list[15].dt_txt,
         });
         console.log(this.state.nextweekWeather);
       });
@@ -103,7 +104,27 @@ class App extends Component {
         <div>
           <NextWeekWeather
             nextweekWeather={this.state.nextweekWeather}
-            nextweekTemperature={this.state.nextweekTemperature}
+            nextweekTemperatureDay={this.state.nextweekTemperatureDay}
+            currentCity={this.state.currentCity}
+            nextweekDate={this.state.nextweekDate}
+            nextweekWindDirection={this.state.nextweekWindDirection}
+            nextweekWindSpeed={this.state.nextweekWindSpeed}
+          />
+        </div>
+        <div>
+          <NextWeekWeather
+            nextweekWeather={this.state.nextweekWeather}
+            nextweekTemperatureDay={this.state.nextweekTemperatureDay}
+            currentCity={this.state.currentCity}
+            nextweekDate={this.state.nextweekDate}
+            nextweekWindDirection={this.state.nextweekWindDirection}
+            nextweekWindSpeed={this.state.nextweekWindSpeed}
+          />
+        </div>
+        <div>
+          <NextWeekWeather
+            nextweekWeather={this.state.nextweekWeather}
+            nextweekTemperatureDay={this.state.nextweekTemperatureDay}
             currentCity={this.state.currentCity}
             nextweekDate={this.state.nextweekDate}
             nextweekWindDirection={this.state.nextweekWindDirection}

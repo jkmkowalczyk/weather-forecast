@@ -50,9 +50,8 @@ class NextWeekWeather extends Component {
     return (
       <div className="nextweek">
         <div className="nextweek-info">
-          <h2>{this.props.currentCity}</h2>
-          <p><Moment format="MMM Do YY">{this.props.nextweekDate}</Moment></p>
-          <p>{this.props.nextweekTemperature}&deg;C</p>
+          <h2><Moment format="MMM Do">{this.props.nextweekDate}</Moment></h2>
+          <p>{this.props.nextweekTemperatureDay}&deg;C</p>
           <p>{this.props.nextweekWeather}</p>
           <img src="../../images/arrow.ico"
                style={{transform: 'rotate(' + this.props.nextweekWindDirection + 'deg)', height: "50px"}}/>
