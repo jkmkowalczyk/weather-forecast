@@ -18,6 +18,7 @@ class App extends Component {
     nextweekWindDirection: '',
     nextweekWeather: '',
     nextweekWindSpeed: '',
+    nextweekDate: '',
   };
 
   cities = [];
@@ -58,14 +59,15 @@ class App extends Component {
   };
   getNextWeekWeather = (id) => {
     axios
-      .get(`https://api.openweathermap.org/data/2.5/forecast?id=${id}&APPID=5ef08df67684d77f946df578d29b8c5e&units=metric` )
+      .get(`https://api.openweathermap.org/data/2.5/forecast?id=${id}&APPID=5ef08df67684d77f946df578d29b8c5e&units=metric`)
       .then((data) => {
         this.setState({
-          nextweekTemperature: data.data.list[6].main.temp,
-          nextweekWeather: data.data.list[6].weather[0].description,
+          nextweekTemperature: data.data.list[7].main.temp,
+          nextweekWeather: data.data.list[7].weather[0].description,
           currentCity: data.data.city.name,
-          nextweekWindDirection: data.data.list[6].wind.deg,
-          nextweekWindSpeed: data.data.list[6].wind.speed,
+          nextweekWindDirection: data.data.list[7].wind.deg,
+          nextweekWindSpeed: data.data.list[7].wind.speed,
+          nextweekDate: (data.data.list[7].dt_txt).slice(0, 10),
         });
         console.log(this.state.nextweekWeather);
       });
@@ -103,6 +105,7 @@ class App extends Component {
             nextweekWeather={this.state.nextweekWeather}
             nextweekTemperature={this.state.nextweekTemperature}
             currentCity={this.state.currentCity}
+            nextweekDate={this.state.nextweekDate}
             nextweekWindDirection={this.state.nextweekWindDirection}
             nextweekWindSpeed={this.state.nextweekWindSpeed}
           />
