@@ -29,6 +29,15 @@ class App extends Component {
     nextweekWindDirection3: '',
     nextweekWeather3: '',
     nextweekWindSpeed3: '',
+    nextweekTemperatureDay4: '',
+    nextweekWindDirection4: '',
+    nextweekWeather4: '',
+    nextweekWindSpeed4: '',
+    nextweekDate4: '',
+    nextweekTemperatureDay5: '',
+    nextweekWindDirection5: '',
+    nextweekWeather5: '',
+    nextweekWindSpeed5: '',
     nextweekDate3: '',
   };
 
@@ -40,6 +49,8 @@ class App extends Component {
     this.getNextWeekWeather(3081368);
     this.getNextWeekWeather2(3081368);
     this.getNextWeekWeather3(3081368);
+    this.getNextWeekWeather4(3081368);
+    this.getNextWeekWeather5(3081368);
   }
 
   loadCities = () => {
@@ -103,7 +114,7 @@ class App extends Component {
 
   getNextWeekWeather3 = (id) => {
     axios
-      .get(`https://api.openweathermap.org/data/2.5/forecast?id=${id}&APPID=5ef08df67684d77f946df578d29b8c5e&units=metric`, )
+      .get(`https://api.openweathermap.org/data/2.5/forecast?id=${id}&APPID=5ef08df67684d77f946df578d29b8c5e&units=metric`,)
       .then((data) => {
         this.setState({
           nextweekTemperatureDay3: data.data.list[23].main.temp.toFixed(1),
@@ -113,6 +124,34 @@ class App extends Component {
           nextweekDate3: data.data.list[23].dt_txt,
         });
         console.log(this.state.nextweekWeather3);
+      });
+  };
+  getNextWeekWeather4 = (id) => {
+    axios
+      .get(`https://api.openweathermap.org/data/2.5/forecast?id=${id}&APPID=5ef08df67684d77f946df578d29b8c5e&units=metric`,)
+      .then((data) => {
+        this.setState({
+          nextweekTemperatureDay4: data.data.list[31].main.temp.toFixed(1),
+          nextweekWeather4: data.data.list[31].weather[0].description,
+          nextweekWindDirection4: data.data.list[31].wind.deg,
+          nextweekWindSpeed4: data.data.list[31].wind.speed,
+          nextweekDate4: data.data.list[31].dt_txt,
+        });
+        console.log(this.state.nextweekWeather4);
+      });
+  };
+  getNextWeekWeather5 = (id) => {
+    axios
+      .get(`https://api.openweathermap.org/data/2.5/forecast?id=${id}&APPID=5ef08df67684d77f946df578d29b8c5e&units=metric`,)
+      .then((data) => {
+        this.setState({
+          nextweekTemperatureDay5: data.data.list[38].main.temp.toFixed(1),
+          nextweekWeather5: data.data.list[38].weather[0].description,
+          nextweekWindDirection5: data.data.list[38].wind.deg,
+          nextweekWindSpeed5: data.data.list[38].wind.speed,
+          nextweekDate5: data.data.list[38].dt_txt,
+        });
+        console.log(this.state.nextweekWeather5);
       });
   };
 
@@ -131,6 +170,8 @@ class App extends Component {
                   getNextWeekWeather={this.getNextWeekWeather}
                   getNextWeekWeather2={this.getNextWeekWeather2}
                   getNextWeekWeather3={this.getNextWeekWeather3}
+                  getNextWeekWeather4={this.getNextWeekWeather4}
+                  getNextWeekWeather5={this.getNextWeekWeather5}
                 />
               </div>
             </div>
@@ -145,35 +186,57 @@ class App extends Component {
             currentWindSpeed={this.state.currentWindSpeed}
           />
         </div>
-        <div>
-          <NextWeekWeather
-            nextweekWeather={this.state.nextweekWeather}
-            nextweekTemperatureDay={this.state.nextweekTemperatureDay}
-            currentCity={this.state.currentCity}
-            nextweekDate={this.state.nextweekDate}
-            nextweekWindDirection={this.state.nextweekWindDirection}
-            nextweekWindSpeed={this.state.nextweekWindSpeed}
-          />
-        </div>
-        <div>
-          <NextWeekWeather
-            nextweekWeather={this.state.nextweekWeather2}
-            nextweekTemperatureDay={this.state.nextweekTemperatureDay2}
-            currentCity={this.state.currentCity2}
-            nextweekDate={this.state.nextweekDate2}
-            nextweekWindDirection={this.state.nextweekWindDirection2}
-            nextweekWindSpeed={this.state.nextweekWindSpeed2}
-          />
-        </div>
-        <div>
-          <NextWeekWeather
-            nextweekWeather={this.state.nextweekWeather3}
-            nextweekTemperatureDay={this.state.nextweekTemperatureDay3}
-            currentCity={this.state.currentCity3}
-            nextweekDate={this.state.nextweekDate3}
-            nextweekWindDirection={this.state.nextweekWindDirection3}
-            nextweekWindSpeed={this.state.nextweekWindSpeed3}
-          />
+        <div className="weatherforecast">
+          <div>
+            <NextWeekWeather
+              nextweekWeather={this.state.nextweekWeather}
+              nextweekTemperatureDay={this.state.nextweekTemperatureDay}
+              currentCity={this.state.currentCity}
+              nextweekDate={this.state.nextweekDate}
+              nextweekWindDirection={this.state.nextweekWindDirection}
+              nextweekWindSpeed={this.state.nextweekWindSpeed}
+            />
+          </div>
+          <div>
+            <NextWeekWeather
+              nextweekWeather={this.state.nextweekWeather2}
+              nextweekTemperatureDay={this.state.nextweekTemperatureDay2}
+              currentCity={this.state.currentCity2}
+              nextweekDate={this.state.nextweekDate2}
+              nextweekWindDirection={this.state.nextweekWindDirection2}
+              nextweekWindSpeed={this.state.nextweekWindSpeed2}
+            />
+          </div>
+          <div>
+            <NextWeekWeather
+              nextweekWeather={this.state.nextweekWeather3}
+              nextweekTemperatureDay={this.state.nextweekTemperatureDay3}
+              currentCity={this.state.currentCity3}
+              nextweekDate={this.state.nextweekDate3}
+              nextweekWindDirection={this.state.nextweekWindDirection3}
+              nextweekWindSpeed={this.state.nextweekWindSpeed3}
+            />
+          </div>
+          <div>
+            <NextWeekWeather
+              nextweekWeather={this.state.nextweekWeather4}
+              nextweekTemperatureDay={this.state.nextweekTemperatureDay4}
+              currentCity={this.state.currentCity4}
+              nextweekDate={this.state.nextweekDate4}
+              nextweekWindDirection={this.state.nextweekWindDirection4}
+              nextweekWindSpeed={this.state.nextweekWindSpeed4}
+            />
+          </div>
+          <div>
+            <NextWeekWeather
+              nextweekWeather={this.state.nextweekWeather5}
+              nextweekTemperatureDay={this.state.nextweekTemperatureDay5}
+              currentCity={this.state.currentCity5}
+              nextweekDate={this.state.nextweekDate5}
+              nextweekWindDirection={this.state.nextweekWindDirection5}
+              nextweekWindSpeed={this.state.nextweekWindSpeed5}
+            />
+          </div>
         </div>
       </div>
     );
