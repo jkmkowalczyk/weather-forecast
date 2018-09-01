@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import Moment from 'react-moment';
+import 'moment-timezone';
 
 class NextWeekWeather extends Component {
 
@@ -49,6 +51,7 @@ class NextWeekWeather extends Component {
       <div className="nextweek">
         <div className="nextweek-info">
           <h2>{this.props.currentCity}</h2>
+          <p><Moment format="MMM Do YY">{this.props.nextweekDate}</Moment></p>
           <p>{this.props.nextweekTemperature}&deg;C</p>
           <p>{this.props.nextweekWeather}</p>
           <img src="../../images/arrow.ico"
