@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import Searchbar from './Searchbar';
 import CityList from './CityList';
 import axios from "axios";
-import Map from './Map';
+import Map from './Map'
 import CurrentWeather from "./CurrentWeather";
+import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 
 class App extends Component {
@@ -69,7 +70,17 @@ console.log(this.state.currentWeather)
               <Searchbar findCities={this.findCities}/>
               <div className="city-list-container">
                 <CityList cityList={this.state.cityList} getCurrentWeather={this.getCurrentWeather}/>
-                <Map />
+                <Map google={this.props.google} zoom={14}>
+
+                <Marker onClick={this.onMarkerClick}
+                name={'Current location'} />
+
+                <InfoWindow onClose={this.onInfoWindowClose}>
+                <div>
+                <h1>{this.state.selectedPlace.name}</h1>
+            </div>
+        </InfoWindow>
+      </Map>
               </div>
             </div>
           </div>
@@ -87,4 +98,6 @@ console.log(this.state.currentWeather)
 }
 
 
-export default App;
+export default GoogleApiWrapper({
+  apiKey: (AIzaSyB87aBhTzmYNx7SkH1M1STElGj1G4sLXRw)
+})(App)
