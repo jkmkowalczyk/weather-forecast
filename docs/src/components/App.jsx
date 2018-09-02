@@ -69,6 +69,7 @@ console.log(this.state.currentWeather)
               <Searchbar findCities={this.findCities}/>
               <div className="city-list-container">
                 <CityList cityList={this.state.cityList} getCurrentWeather={this.getCurrentWeather}/>
+                <Map />
               </div>
             </div>
           </div>
