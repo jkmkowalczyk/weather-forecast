@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 import axios from "axios";
+import Map from './components/Map';
+
+
+const { lon, lat } = cityList.coord
 
 class CityList extends Component {
 
