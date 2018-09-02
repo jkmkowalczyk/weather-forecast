@@ -3,7 +3,7 @@ import axios from "axios";
 import Map from './components/Map';
 
 
-const { lon, lat } = cityList.coord
+const { lon, lat } = cityList.coord,
 
 class CityList extends Component {
 
