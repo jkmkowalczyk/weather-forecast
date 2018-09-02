@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import Searchbar from './Searchbar';
 import CityList from './CityList';
 import axios from "axios";
-import Map from './Map'
 import CurrentWeather from "./CurrentWeather";
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
