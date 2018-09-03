@@ -191,7 +191,6 @@ class App extends Component {
             <NextWeekWeather
               nextweekWeather={this.state.nextweekWeather}
               nextweekTemperatureDay={this.state.nextweekTemperatureDay}
-              currentCity={this.state.currentCity}
               nextweekDate={this.state.nextweekDate}
               nextweekWindDirection={this.state.nextweekWindDirection}
               nextweekWindSpeed={this.state.nextweekWindSpeed}
@@ -201,7 +200,6 @@ class App extends Component {
             <NextWeekWeather
               nextweekWeather={this.state.nextweekWeather2}
               nextweekTemperatureDay={this.state.nextweekTemperatureDay2}
-              currentCity={this.state.currentCity2}
               nextweekDate={this.state.nextweekDate2}
               nextweekWindDirection={this.state.nextweekWindDirection2}
               nextweekWindSpeed={this.state.nextweekWindSpeed2}
@@ -211,7 +209,6 @@ class App extends Component {
             <NextWeekWeather
               nextweekWeather={this.state.nextweekWeather3}
               nextweekTemperatureDay={this.state.nextweekTemperatureDay3}
-              currentCity={this.state.currentCity3}
               nextweekDate={this.state.nextweekDate3}
               nextweekWindDirection={this.state.nextweekWindDirection3}
               nextweekWindSpeed={this.state.nextweekWindSpeed3}
@@ -221,7 +218,6 @@ class App extends Component {
             <NextWeekWeather
               nextweekWeather={this.state.nextweekWeather4}
               nextweekTemperatureDay={this.state.nextweekTemperatureDay4}
-              currentCity={this.state.currentCity4}
               nextweekDate={this.state.nextweekDate4}
               nextweekWindDirection={this.state.nextweekWindDirection4}
               nextweekWindSpeed={this.state.nextweekWindSpeed4}
@@ -231,7 +227,6 @@ class App extends Component {
             <NextWeekWeather
               nextweekWeather={this.state.nextweekWeather5}
               nextweekTemperatureDay={this.state.nextweekTemperatureDay5}
-              currentCity={this.state.currentCity5}
               nextweekDate={this.state.nextweekDate5}
               nextweekWindDirection={this.state.nextweekWindDirection5}
               nextweekWindSpeed={this.state.nextweekWindSpeed5}
