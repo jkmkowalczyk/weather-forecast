@@ -49,11 +49,15 @@ class CurrentWeather extends Component {
       <div className="current">
         <div className="current-info">
           <h2>{this.props.currentCity}</h2>
-          <p>{this.props.currentTemperature}&deg;C</p>
-          <p>{this.props.currentWeather}</p>
-          <img src="../../images/arrow.ico"
-               style={{transform: 'rotate(' + this.props.currentWindDirection + 'deg)', height: "50px"}}/>
-          <p>{this.props.currentWindSpeed}m/s</p>
+          <div className="weather-parameters">
+            <p className="temperature">{this.props.currentTemperature}&deg;C</p>
+            <p>{this.props.currentWeather}</p>
+          </div>
+          <div className="weather-parameters">
+             <img src="../../images/arrow.ico"
+                style={{transform: 'rotate(' + this.props.currentWindDirection + 'deg)', height: "50px"}}/>
+            <p>{this.props.currentWindSpeed}m/s</p>
+          </div>
         </div>
         <div className="current-details">
           {this.selectWeatherIcon(this.props.currentWeather)}
