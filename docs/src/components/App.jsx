@@ -70,7 +70,7 @@ class App extends Component {
 
   getCurrentWeather = (id) => {
     axios
-      .get(`https://api.openweathermap.org/data/2.5/weather?id=${id}&APPID=5ef08df67684d77f946df578d29b8c5e&units=metric`,)
+      .get(`https://api.openweathermap.org/data/2.5/weather?id=${id}&APPID=e2c9b801efdd379f6dd92b4a482cf7b1&units=metric`,)
       .then((data) => {
         this.setState({
           currentTemperature: data.data.main.temp.toFixed(1),
@@ -84,7 +84,7 @@ class App extends Component {
   };
   getNextWeekWeather = (id) => {
     axios
-      .get(`https://api.openweathermap.org/data/2.5/forecast?id=${id}&APPID=5ef08df67684d77f946df578d29b8c5e&units=metric`,)
+      .get(`https://api.openweathermap.org/data/2.5/forecast?id=${id}&APPID=e2c9b801efdd379f6dd92b4a482cf7b1&units=metric`,)
       .then((data) => {
         this.setState({
           nextweekTemperatureDay: data.data.list[7].main.temp.toFixed(1),
@@ -99,7 +99,7 @@ class App extends Component {
 
   getNextWeekWeather2 = (id) => {
     axios
-      .get(`https://api.openweathermap.org/data/2.5/forecast?id=${id}&APPID=5ef08df67684d77f946df578d29b8c5e&units=metric`,)
+      .get(`https://api.openweathermap.org/data/2.5/forecast?id=${id}&APPID=e2c9b801efdd379f6dd92b4a482cf7b1&units=metric`,)
       .then((data) => {
         this.setState({
           nextweekTemperatureDay2: data.data.list[15].main.temp.toFixed(1),
@@ -114,7 +114,7 @@ class App extends Component {
 
   getNextWeekWeather3 = (id) => {
     axios
-      .get(`https://api.openweathermap.org/data/2.5/forecast?id=${id}&APPID=5ef08df67684d77f946df578d29b8c5e&units=metric`,)
+      .get(`https://api.openweathermap.org/data/2.5/forecast?id=${id}&APPID=e2c9b801efdd379f6dd92b4a482cf7b1&units=metric`,)
       .then((data) => {
         this.setState({
           nextweekTemperatureDay3: data.data.list[23].main.temp.toFixed(1),
@@ -128,7 +128,7 @@ class App extends Component {
   };
   getNextWeekWeather4 = (id) => {
     axios
-      .get(`https://api.openweathermap.org/data/2.5/forecast?id=${id}&APPID=5ef08df67684d77f946df578d29b8c5e&units=metric`,)
+      .get(`https://api.openweathermap.org/data/2.5/forecast?id=${id}&APPID=e2c9b801efdd379f6dd92b4a482cf7b1&units=metric`,)
       .then((data) => {
         this.setState({
           nextweekTemperatureDay4: data.data.list[31].main.temp.toFixed(1),
@@ -142,7 +142,7 @@ class App extends Component {
   };
   getNextWeekWeather5 = (id) => {
     axios
-      .get(`https://api.openweathermap.org/data/2.5/forecast?id=${id}&APPID=5ef08df67684d77f946df578d29b8c5e&units=metric`,)
+      .get(`https://api.openweathermap.org/data/2.5/forecast?id=${id}&APPID=e2c9b801efdd379f6dd92b4a482cf7b1&units=metric`,)
       .then((data) => {
         this.setState({
           nextweekTemperatureDay5: data.data.list[38].main.temp.toFixed(1),
@@ -160,7 +160,7 @@ class App extends Component {
       <div>
         <nav>
           <div className="nav-container">
-            <img src="../../images/logo.png" className="logo" />
+            <img src="../../images/logo2.jpg" className="logo" />
             <div className="search-container">
               <Searchbar findCities={this.findCities} />
               <div className="city-list-container">
@@ -177,7 +177,7 @@ class App extends Component {
             </div>
           </div>
         </nav>
-        <div>
+        <div className="app-current">
           <CurrentWeather
             currentWeather={this.state.currentWeather}
             currentTemperature={this.state.currentTemperature}
