@@ -57,7 +57,7 @@ class App extends Component {
     nextWeekTemp4: "",
     nextWeekTemp5: ""
   };
-  apiKey = "5a8763ce632958845b21fbe496bbee97";
+  apiKey = "e2c9b801efdd379f6dd92b4a482cf7b1";
 
   cities = [];
 
@@ -88,16 +88,14 @@ class App extends Component {
 
   getCurrentWeather = id => {
     axios
-      .get(
-        `https://api.openweathermap.org/data/2.5/weather?id=${id}&APPID=${this.apiKey}&units=metric`
-      )
+      .get(`https://api.openweathermap.org/data/2.5/weather?id=${id}&APPID=${this.apiKey}&units=metric`)
       .then(data => {
         this.setState({
           currentTemperature: data.data.main.temp.toFixed(1),
           currentWeather: data.data.weather[0].description,
           currentCity: data.data.name,
           currentWindDirection: data.data.wind.deg,
-          currentWindSpeed: data.data.wind.speed,
+          currentWindSpeed: data.data.wind.speed
         });
         console.log(this.state.currentWeather);
       });
@@ -195,7 +193,7 @@ class App extends Component {
       <div>
         <nav>
           <div className="nav-container">
-            <img src="../../images/logo2.jpg" className="logo" />
+            <img src="../../images/logo1.png" className="logo" />
             <div className="search-container">
               <Searchbar findCities={this.findCities} />
               <div className="city-list-container">
@@ -265,13 +263,43 @@ class App extends Component {
               nextweekDate={this.state.nextweekDate5}
               nextweekWindDirection={this.state.nextweekWindDirection5}
               nextweekWindSpeed={this.state.nextweekWindSpeed5}
-           />
+            />
           </div>
         </div>
         <div className="charts">
-        <Charts title={"5 DAYS TEMPERATURE"} measure={"Temperature ( C )"} dats={[this.state.nextWeekTemp, this.state.nextWeekTemp2, this.state.nextWeekTemp3, this.state.nextWeekTemp4, this.state.nextWeekTemp5]} />
-        <Charts title={"5 DAYS PRESSURE"} measure={"Pressure ( hPa )"} dats={[this.state.nextWeekPressure, this.state.nextWeekPressure2, this.state.nextWeekPressure3, this.state.nextWeekPressure4, this.state.nextWeekPressure5]} />
-        <Charts title={"5 DAYS HUMIDITY"} measure={"Humidity ( % )"} dats={[this.state.nextWeekHumidity, this.state.nextWeekHumidity2, this.state.nextWeekHumidity3, this.state.nextWeekHumidity4, this.state.nextWeekHumidity5]} />
+          <Charts
+            title={"5 DAYS TEMPERATURE"}
+            measure={"Temperature ( C )"}
+            dats={[
+              this.state.nextWeekTemp,
+              this.state.nextWeekTemp2,
+              this.state.nextWeekTemp3,
+              this.state.nextWeekTemp4,
+              this.state.nextWeekTemp5
+            ]}
+          />
+          <Charts
+            title={"5 DAYS PRESSURE"}
+            measure={"Pressure ( hPa )"}
+            dats={[
+              this.state.nextWeekPressure,
+              this.state.nextWeekPressure2,
+              this.state.nextWeekPressure3,
+              this.state.nextWeekPressure4,
+              this.state.nextWeekPressure5
+            ]}
+          />
+          <Charts
+            title={"5 DAYS HUMIDITY"}
+            measure={"Humidity ( % )"}
+            dats={[
+              this.state.nextWeekHumidity,
+              this.state.nextWeekHumidity2,
+              this.state.nextWeekHumidity3,
+              this.state.nextWeekHumidity4,
+              this.state.nextWeekHumidity5
+            ]}
+          />
         </div>
       </div>
     );

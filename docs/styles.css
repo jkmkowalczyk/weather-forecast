@@ -40,8 +40,8 @@ li {
 
 .container {
   width: 65%;
-  margin-top: 20px;
-  height: 85vh;
+  margin-top: 20px 4%;
+  height: 90vh;
 }
 
 nav {
@@ -49,14 +49,15 @@ nav {
 }
 
 .nav-container {
-  margin: 15px;
+  margin: 4%;
   width: 100%;
   display: flex;
   align-items: flex-start;
+
 }
 
 .logo {
-  height: 100px;
+  height: 150px;
   margin: 0 15px 0 0;
   opacity: 0.8;
   border-radius: 2px;
@@ -70,9 +71,7 @@ nav {
 .searchbar {
   width: 90%;
   padding-left: 10px;
-  /* box-sizing: border-box; */
-  /* width: 500px; */
-  height: 60px;
+  height: 70px;
   background-color: black;
   color: #a5e5e5;
   border-radius: 2px;
@@ -82,10 +81,11 @@ nav {
 
 .city-list-container {
   overflow: auto;
-  max-height: 70px;
+  max-height: 75px;
   position: absolute;
-  width: 95%;
-  box-sizing: border-box;
+  width: 90%;
+  padding-left: 10px;
+  /* box-sizing: border-box; */
   font-size: 12px;
   background-color: rgb(8, 8, 8);
   color: #a5e5e5;
@@ -99,7 +99,7 @@ nav {
 }
 .city-list :hover {
   background-color: black;
-  opacity: 0.5;
+  opacity: 0.6;
   color: antiquewhite;
 }
 .app-current{
@@ -128,14 +128,14 @@ nav {
 }
 
 .current h2 {
-  font-size: 50px;
+  /* font-size: 50px; */
   margin: 10px 0;
   color:antiquewhite ;
 }
 
 .current p {
   color:#a5e5e5 ;
-  font-size: 40px;
+  /* font-size: 40px; */
 }
 
 .weather-icon {
@@ -189,4 +189,67 @@ rect {
 text {
   color: white !important;
   fill: white !important;
+}
+/*media queries*/
+@media screen and (min-width: 1421px)
+{
+
+
+}
+@media screen and (min-width: 981px) and (max-width: 1420px)
+{
+
+}
+@media screen and (min-width: 981px) and (max-width: 991px)
+{
+
+}
+@media screen and (min-width: 530px) and (max-width: 980px)
+{
+  .current{
+     margin: 5% 0;
+  padding: 13%;
+  height: 250px;
+  width: 250px;
+  border-radius: 2px;
+  text-align: center;
+  background-color: black;
+  opacity:0.8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  }
+
+}
+@media screen and (max-width: 530px)
+{
+  .current{
+     margin: 5% 0;
+  padding: 13%;
+  height: 250px;
+  width: 250px;
+  border-radius: 2px;
+  text-align: center;
+  background-color: black;
+  opacity:0.8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  }
+}
+@media screen and (max-width: 445px)
+{
+  .current{
+     margin: 5% 0;
+  padding: 13%;
+  height: 250px;
+  width: 250px;
+  border-radius: 2px;
+  text-align: center;
+  background-color: black;
+  opacity:0.8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  }
 }
