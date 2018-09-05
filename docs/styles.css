@@ -178,4 +178,15 @@ nav {
   font-size: 20px;
 }
 
+.chart {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  margin: 30px;
+}
 
+rect {
+  fill: none;
+}
+text {
+  color: white !important;
+  fill: white !important;
+}

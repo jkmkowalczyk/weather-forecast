@@ -25,11 +25,15 @@
   "dependencies": {
     "axios": "^0.17.1",
     "babel-preset-stage-1": "^6.1.18",
+    "highcharts": "^6.1.2",
     "lodash": "^4.17.4",
     "moment": "^2.22.2",
     "moment-timezone": "^0.5.21",
+    "prop-types": "^15.6.2",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
-    "react-moment": "^0.7.9"
+    "react-jsx-highcharts": "^3.2.1",
+    "react-moment": "^0.7.9",
+    "react-sparklines": "^1.7.0"
   }
 }
