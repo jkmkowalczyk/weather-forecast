@@ -1,0 +1,255 @@
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: url("images/bg3.jpg") fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul {
+  padding: 0;
+  margin: 0 3px 0 3px;
+}
+
+h2, p {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  padding-top: 5px;
+}
+
+.container {
+  width: 65%;
+  margin-top: 20px 4%;
+  height: 90vh;
+}
+
+nav {
+  height: 25%;
+}
+
+.nav-container {
+  margin: 4%;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+
+}
+
+.logo {
+  height: 150px;
+  margin: 0 15px 0 0;
+  opacity: 0.8;
+  border-radius: 2px;
+}
+
+.search-container {
+  width: 100%;
+  position: relative;
+}
+
+.searchbar {
+  width: 90%;
+  padding-left: 10px;
+  height: 70px;
+  background-color: black;
+  color: #a5e5e5;
+  border-radius: 2px;
+  border: solid 1px black;
+  opacity: 0.8;
+}
+
+.city-list-container {
+  overflow: auto;
+  max-height: 75px;
+  position: absolute;
+  width: 90%;
+  padding-left: 10px;
+  /* box-sizing: border-box; */
+  font-size: 12px;
+  background-color: rgb(8, 8, 8);
+  color: #a5e5e5;
+  border-radius: 2px;
+  border: solid 1px black;
+  opacity: 0.8;
+}
+
+.city-list {
+  list-style-type: none;
+}
+.city-list :hover {
+  background-color: black;
+  opacity: 0.6;
+  color: antiquewhite;
+}
+.app-current{
+ margin: 4% ;
+}
+.current {
+  padding: 5%;
+  height: 15em;
+  width: 90%;
+  border-radius: 2px;
+  text-align: center;
+  background-color: black;
+  opacity:0.8;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.current-info, .current-details {
+  margin:0 10%;
+  width: 50%;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.current h2 {
+  /* font-size: 50px; */
+  margin: 10px 0;
+  color:antiquewhite ;
+}
+
+.current p {
+  color:#a5e5e5 ;
+  /* font-size: 40px; */
+}
+
+.weather-icon {
+  height: 70px;
+  width: 70px;
+  background-color:antiquewhite;
+}
+.current .weather-icon {
+  height: 100px;
+  width:100px;
+  background-color:antiquewhite;
+}
+
+.weatherforecast {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.nextweek {
+  margin: 5% 0;
+  padding: 13%;
+  height: 250px;
+  width: 250px;
+  border-radius: 2px;
+  text-align: center;
+  background-color: black;
+  opacity:0.8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nextweek h2 {
+  margin: 10px 0;
+  color: #f1f1f1;
+}
+
+.nextweek p {
+  color: #a5e5e5;
+  font-size: 20px;
+}
+
+.chart {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  margin: 30px;
+}
+
+rect {
+  fill: none;
+}
+text {
+  color: white !important;
+  fill: white !important;
+}
+/*media queries*/
+@media screen and (min-width: 1421px)
+{
+
+
+}
+@media screen and (min-width: 981px) and (max-width: 1420px)
+{
+
+}
+@media screen and (min-width: 981px) and (max-width: 991px)
+{
+
+}
+@media screen and (min-width: 530px) and (max-width: 980px)
+{
+  .current{
+     margin: 5% 0;
+  padding: 13%;
+  height: 250px;
+  width: 250px;
+  border-radius: 2px;
+  text-align: center;
+  background-color: black;
+  opacity:0.8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  }
+
+}
+@media screen and (max-width: 530px)
+{
+  .current{
+     margin: 5% 0;
+  padding: 13%;
+  height: 250px;
+  width: 250px;
+  border-radius: 2px;
+  text-align: center;
+  background-color: black;
+  opacity:0.8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  }
+}
+@media screen and (max-width: 445px)
+{
+  .current{
+     margin: 5% 0;
+  padding: 13%;
+  height: 250px;
+  width: 250px;
+  border-radius: 2px;
+  text-align: center;
+  background-color: black;
+  opacity:0.8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  }
+}
